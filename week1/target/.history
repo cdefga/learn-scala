@@ -10,3 +10,5 @@ compile
 run
 submit quangnd188@gmail.com hA4MQMSShvf1WIBx
 sbt about
+console
+scala
