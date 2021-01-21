@@ -44,5 +44,6 @@ object Main extends App {
     // val res = balance("(if (zero? x) max (/ 1 x))".toList)
     // println(res)
 
-    
+    def filter(p: Int => Boolean, x: Int): AnyVal = if (p(x)) x else false
+    println(filter(x => x > 3, 4))
 }
