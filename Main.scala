@@ -48,13 +48,17 @@ object Main extends App {
     // println(filter(x => x > 3, 4))
 
     def test_list(list: List[Int]): Unit = {
-        println(s"length: ${list.length}")
-        println(s"last: ${list.last}")
-        println(s"init: ${list.init}")
-        println(s"tail: ${list.tail}")
-        println(s"take 3 : ${list take 3}")
-        println(s"drop 3 : ${list drop 3}")
-        println(s"apply 3 : ${list apply 3} ${list(3)}")
+        // println(s"length: ${list.length}")
+        // println(s"last: ${list.last}")
+        // println(s"init: ${list.init}")
+        // println(s"tail: ${list.tail}")
+        // println(s"take 3 : ${list take 3}")
+        // println(s"drop 3 : ${list drop 3}")
+        // println(s"apply 3 : ${list apply 3} ${list(3)}")
+        val reduced = list.reduce((x,y) => x+y)
+        val max = list.reduce(_ max _)
+        println(reduced)
+        println(max)
     }
     test_list(List(1,2,3,4))
 }
