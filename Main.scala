@@ -47,7 +47,7 @@ object Main extends App {
     def filter(p: Int => Boolean, x: Int): AnyVal = if (p(x)) x else false
     // println(filter(x => x > 3, 4))
 
-    def test_list(list: List[Int]): Unit = {
+    def test_list(list: List[List[String]]): Unit = {
         // println(s"length: ${list.length}")
         // println(s"last: ${list.last}")
         // println(s"init: ${list.init}")
@@ -55,10 +55,16 @@ object Main extends App {
         // println(s"take 3 : ${list take 3}")
         // println(s"drop 3 : ${list drop 3}")
         // println(s"apply 3 : ${list apply 3} ${list(3)}")
-        val reduced = list.reduce((x,y) => x+y)
-        val max = list.reduce(_ max _)
-        println(reduced)
-        println(max)
+
+        // val reduced = list.reduce((x,y) => x+y)
+        // val max = list.reduce(_ max _)
+        // println(s"reduced: ${reduced}")
+        // println(s"max: ${max}")
+
+        val flatten = list.flatMap(_.map((_, 1)))
+        val fl = list.map(_.map((_, 1)))
+        println(s"flatMap: ${flatten}")
+        println(s"map and flatten: ${fl}")
     }
-    test_list(List(1,2,3,4))
+    test_list(List(List("1","2","3","4"), List("aaaa", "bbb","ccc")))
 }
