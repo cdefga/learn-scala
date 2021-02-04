@@ -63,7 +63,12 @@ object Main extends App {
 
         val flatten = list.flatMap(_.map((_, 1)))
         val fl = list.map(_.map((_, 1)))
-        println(s"flatMap: ${flatten}")
+        val temp = list.map {
+            x =>
+            val a = 2 
+            (x, a)
+        }
+        println(s"flatMap: ${flatten(1)}")
         println(s"map and flatten: ${fl}")
     }
     test_list(List(List("1","2","3","4"), List("aaaa", "bbb","ccc")))
